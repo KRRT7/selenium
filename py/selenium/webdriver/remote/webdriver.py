@@ -93,11 +93,7 @@ def _create_caps(caps):
     :Args:
      - caps - A dictionary of capabilities requested by the caller.
     """
-    caps = copy.deepcopy(caps)
-    always_match = {}
-    for k, v in caps.items():
-        always_match[k] = v
-    return {"capabilities": {"firstMatch": [{}], "alwaysMatch": always_match}}
+    return {"capabilities": {"firstMatch": [{}], "alwaysMatch": dict(caps)}}
 
 
 def get_remote_connection(
