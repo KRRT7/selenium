@@ -93,10 +93,7 @@ def _create_caps(caps):
     :Args:
      - caps - A dictionary of capabilities requested by the caller.
     """
-    caps = copy.deepcopy(caps)
-    always_match = {}
-    for k, v in caps.items():
-        always_match[k] = v
+    always_match = {k: v for k, v in caps.items()}
     return {"capabilities": {"firstMatch": [{}], "alwaysMatch": always_match}}
 
 
